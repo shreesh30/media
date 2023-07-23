@@ -1,7 +1,22 @@
 {
-    "users":[
-        {"id":1,"name":"Myra"}
-    ],
-    "albums":[],
-    "photos":[]
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Doyle Marquardt",
+      "id": 2
+    },
+    {
+      "name": "Greg Bosco",
+      "id": 3
+    },
+    {
+      "name": "Cindy Dach",
+      "id": 4
+    }
+  ],
+  "albums": [],
+  "photos": []
 }
