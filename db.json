@@ -15,9 +15,39 @@
   ],
   "albums": [
     {
-      "id":10,
-      "title":"Hiking Trip",
-      "userId":1
+      "id": 10,
+      "title": "Hiking Trip",
+      "userId": 1
+    },
+    {
+      "userId": 1,
+      "title": "Luxurious Steel Mouse",
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "title": "Gorgeous Bronze Chips",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Small Plastic Table",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "title": "Generic Soft Computer",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "title": "Generic Metal Towels",
+      "id": 16
+    },
+    {
+      "userId": 3,
+      "title": "Practical Cotton Computer",
+      "id": 17
     }
   ],
   "photos": []
