@@ -29,12 +29,11 @@ const albumsApi = createApi({
         */
       fetchAlbums: builder.query({
         providesTags: (result, error, user) => {
-          return [
-            {
-              type: "Album",
-              id: user.id,
-            },
-          ];
+          const tags = result.map((album) => {
+            return { type: "Album", id: album.id };
+          });
+          tags.push({ type: "UsersAlbum", id: user.id });
+          return tags;
         },
         // The argument that we passed in the hook, that will be passed here i.e. as an argument for "query"
         query: (user) => {
@@ -51,7 +50,7 @@ const albumsApi = createApi({
         invalidatesTags: (result, error, user) => {
           return [
             {
-              type: "Album",
+              type: "UsersAlbum",
               id: user.id,
             },
           ];
@@ -68,6 +67,14 @@ const albumsApi = createApi({
         },
       }),
       removeAlbum: builder.mutation({
+        invalidatesTags: (result, error, album) => {
+          return [
+            {
+              type: "Album",
+              id: album.id,
+            },
+          ];
+        },
         query: (album) => {
           return {
             url: `/albums/${album.id}`,
