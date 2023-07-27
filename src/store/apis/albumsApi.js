@@ -1,23 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { faker } from "@faker-js/faker";
 
-const pause = (duration) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, duration);
-  });
-};
-
 const albumsApi = createApi({
   // The key in the big state object where all of the APIs should be maintained
   reducerPath: "albums",
   //   API nneds to know where and how to send the request
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3005",
-    fetchFn: async (...args) => {
-      // ONLY FOR DEV
-      await pause(1000);
-      return fetch(...args);
-    },
   }),
   endpoints: (builder) => {
     return {
